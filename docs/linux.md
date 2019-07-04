@@ -1,12 +1,10 @@
 # Linux使用笔记
 
-## 一、常用命令
+## 一、性能图览![Linux性能查看工具图览](./img/linux_observability_tools.png)
 
-### 性能查看工具图览![Linux性能查看工具图览](./img/linux_observability_tools.png)
+## 1. netstat
 
-#### 1. netstat
-
-##### 查看主机开放的端口
+#### 查看主机开放的端口
 
 ```bash
 root@Peter-VM:~# netstat -tnlp
@@ -23,7 +21,7 @@ tcp6       0      0 :::3306                 :::*                    LISTEN      
 tcp6       0      0 :::6379                 :::*                    LISTEN      30781/docker-proxy
 ```
 
-##### 查看指定端口对应的进程
+#### 查看指定端口对应的进程
 
 ```bash
 root@Peter-VM:~# netstat -anlp | grep ':80'
@@ -31,16 +29,23 @@ tcp        0      0 0.0.0.0:80              0.0.0.0:*               LISTEN      
 tcp        0      0 172.18.29.203:53224     100.100.30.26:80        ESTABLISHED 23045/AliYunDun  
 ```
 
+## 2. free
+
+```bash
+root@Peter-VM:~# free -h
+              total        used        free      shared  buff/cache   available
+Mem:           985M        676M         80M        5.3M        228M        163M
+Swap:          947M          0B        947M
+```
 
 
 
 
 
-
-### Linux性能测试工具图览![测试工具](./img/linux_benchmarking_tools.png)
-
+## 二、测试图览![测试工具](./img/linux_benchmarking_tools.png)
 
 
 
 
-### Linux性能调优工具图览![调优工具](img/linux_tuning_tools.png)
+
+## Linux性能调优工具图览![调优工具](img/linux_tuning_tools.png)
