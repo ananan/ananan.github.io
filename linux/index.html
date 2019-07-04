@@ -8,7 +8,7 @@
   
   
   <link rel="shortcut icon" href="../img/favicon.ico">
-  <title>Linux - MkLorum</title>
+  <title>Linux使用笔记 - MkLorum</title>
   <link href='https://fonts.googleapis.com/css?family=Lato:400,700|Roboto+Slab:400,700|Inconsolata:400,700' rel='stylesheet' type='text/css'>
 
   <link rel="stylesheet" href="../css/theme.css" type="text/css" />
@@ -17,7 +17,7 @@
   
   <script>
     // Current page data
-    var mkdocs_page_name = "Linux";
+    var mkdocs_page_name = "Linux\u4f7f\u7528\u7b14\u8bb0";
     var mkdocs_page_input_path = "linux.md";
     var mkdocs_page_url = null;
   </script>
@@ -55,13 +55,16 @@
           
             <li class="toctree-l1 current">
 		
-    <a class="current" href="./">Linux</a>
+    <a class="current" href="./">Linux使用笔记</a>
     <ul class="subnav">
             
-    <li class="toctree-l2"><a href="#_1">程序调试</a></li>
+    <li class="toctree-l2"><a href="#linux">Linux使用笔记</a></li>
     
-
-    <li class="toctree-l2"><a href="#linux">Linux相关</a></li>
+        <ul>
+        
+            <li><a class="toctree-l3" href="#_1">一、常用命令</a></li>
+        
+        </ul>
     
 
     </ul>
@@ -99,7 +102,7 @@
     
       
     
-    <li>Linux</li>
+    <li>Linux使用笔记</li>
     <li class="wy-breadcrumbs-aside">
       
     </li>
@@ -109,17 +112,33 @@
           <div role="main">
             <div class="section">
               
-                <h2 id="_1">程序调试</h2>
-<ul>
-<li><a href="http://blog.jobbole.com/107759/">GDB调试</a></li>
-</ul>
-<p># </p>
-<h2 id="linux">Linux相关</h2>
-<ul>
-<li>Linux性能查看工具图览<img alt="Linux性能查看工具图览" src="../img/linux_observability_tools.png" /></li>
-<li>Linux性能测试工具图览<img alt="测试工具" src="../img/linux_benchmarking_tools.png" /></li>
-<li>Linux性能调优工具图览<img alt="调优工具" src="../img/linux_tuning_tools.png" /></li>
-</ul>
+                <h1 id="linux">Linux使用笔记</h1>
+<h2 id="_1">一、常用命令</h2>
+<h3 id="_2">性能查看工具图览<img alt="Linux性能查看工具图览" src="../img/linux_observability_tools.png" /></h3>
+<h4 id="1-netstat">1. netstat</h4>
+<h5 id="_3">查看主机开放的端口</h5>
+<pre><code class="bash">root@Peter-VM:~# netstat -tnlp
+Active Internet connections (only servers)
+Proto Recv-Q Send-Q Local Address           Foreign Address         State       PID/Program name    
+tcp        0      0 0.0.0.0:22345           0.0.0.0:*               LISTEN      15262/sshd          
+tcp        0      0 127.0.0.1:44077         0.0.0.0:*               LISTEN      864/containerd      
+tcp        0      0 0.0.0.0:80              0.0.0.0:*               LISTEN      16740/python3       
+tcp        0      0 127.0.0.53:53           0.0.0.0:*               LISTEN      323/systemd-resolve 
+tcp        0      0 127.0.0.1:6010          0.0.0.0:*               LISTEN      13972/sshd: root@pt 
+tcp        0      0 127.0.0.1:6011          0.0.0.0:*               LISTEN      15991/sshd: root@pt 
+tcp6       0      0 :::27017                :::*                    LISTEN      30114/docker-proxy  
+tcp6       0      0 :::3306                 :::*                    LISTEN      30448/docker-proxy  
+tcp6       0      0 :::6379                 :::*                    LISTEN      30781/docker-proxy
+</code></pre>
+
+<h5 id="_4">查看指定端口对应的进程</h5>
+<pre><code class="bash">root@Peter-VM:~# netstat -anlp | grep ':80'
+tcp        0      0 0.0.0.0:80              0.0.0.0:*               LISTEN      16740/python3       
+tcp        0      0 172.18.29.203:53224     100.100.30.26:80        ESTABLISHED 23045/AliYunDun  
+</code></pre>
+
+<h3 id="linux_1">Linux性能测试工具图览<img alt="测试工具" src="../img/linux_benchmarking_tools.png" /></h3>
+<h3 id="linux_2">Linux性能调优工具图览<img alt="调优工具" src="../img/linux_tuning_tools.png" /></h3>
               
             </div>
           </div>
