@@ -1,6 +1,6 @@
 #### 一、简介
 
-​	nginx是一个单线程模型的高性能web服务器, 相比apache的多线程模型(即处理一个请求就要创建一个线程), nginx在linux里使用epoll事件模型可以获得很好的并发性能, 而且占用资源少, 轻量级, 不用它都不好意思说是做web的.
+​    nginx是一个单线程模型的高性能web服务器, 相比apache的多线程模型(即处理一个请求就要创建一个线程), nginx在linux里使用epoll事件模型可以获得很好的并发性能, 而且占用资源少, 轻量级, 不用它都不好意思说是做web的.
 
 #### 二、Nginx应用场景
 
@@ -13,11 +13,11 @@ server {
     listen 80; #设置监听端口
     server_name localhost; #设置主机名
     client_max_body_size 1024M; #设置请求body最大为1GB
-    
+
     location / {
-    		root /var/www/html;
-    		index index.html;
-	}
+            root /var/www/html;
+            index index.html;
+    }
 }
 ```
 
@@ -29,24 +29,24 @@ server {
 upstream test{
     server localhost:8080;
     server localhost:8081;
-	}
+    }
 server{
     listen 80;
     server_name localhost;
-    
+
     # 设置根目录index
     location / {
-    	root /var/www/html;  
-    	index index.html;
-	}
-	# 正则匹配所有的静态资源
-	location ~ .(gif|jpg|jpeg|png|bmp|swf|css|js)${
-    	root /var/www/html
-	}
-	# 正则匹配所有jsp和do文件并传给后段tomcat服务器处理
-	location ~ .(jsp|do)$ {
-    	proxy_pass http://test; # 反向代理
-	}
+        root /var/www/html;  
+        index index.html;
+    }
+    # 正则匹配所有的静态资源
+    location ~ .(gif|jpg|jpeg|png|bmp|swf|css|js)${
+        root /var/www/html
+    }
+    # 正则匹配所有jsp和do文件并传给后段tomcat服务器处理
+    location ~ .(jsp|do)$ {
+        proxy_pass http://test; # 反向代理
+    }
 }
 ```
 
@@ -58,11 +58,11 @@ server{
 server { 
     listen 80;
     server_name localhost; #多个主机名可以用空格分开
-    
+
     location / { # ‘/’是代理所有的意思, 可以用正则来匹配
-    	proxy_pass http://127.0.0.1:5000; # flask服务
-    	proxy_set_header Host $host:$server_port;
-	}
+        proxy_pass http://127.0.0.1:5000; # flask服务
+        proxy_set_header Host $host:$server_port;
+    }
 }
 ```
 
@@ -72,9 +72,9 @@ load balance是常见的业务需求, 当应对大量用户请求的时候, 负�
 
 负载均衡算法主要有:
 
- - Round-Robin(轮训算法, nginx默认就是这个)
-- ip_hash (对于client需要和后台服务保持session, 同一个ip转发到同一个服务器)
-- weight (权重, 控制后端服务器从nginx接受到请求的权重, 适用与后端服务器性能不均匀的情况, 性能好的权重大一点)
+- Round-Robin(轮训算法, nginx默认就是这个)
+  - ip_hash (对于client需要和后台服务保持session, 同一个ip转发到同一个服务器)
+  - weight (权重, 控制后端服务器从nginx接受到请求的权重, 适用与后端服务器性能不均匀的情况, 性能好的权重大一点)
 
 nginx负载均衡配置如下:
 
@@ -89,7 +89,7 @@ nginx负载均衡配置如下:
         listen       81;                                                         
         server_name  localhost;                                               
         client_max_body_size 1024M;
- 
+
         location / {
             proxy_pass http://test;
             proxy_set_header Host $host:$server_port;
@@ -100,5 +100,3 @@ nginx负载均衡配置如下:
 #### 三、Reload
 
 nginx -s reload (支持热启动使配置生效)
-
-
