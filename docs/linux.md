@@ -1,10 +1,10 @@
 # Linux使用笔记
 
-## 一、性能图览![Linux性能查看工具图览](./img/linux_observability_tools.png)
+# 一、性能图览![Linux性能查看工具图览](./img/linux_observability_tools.png)
 
 ## 1. netstat
 
-#### 查看主机开放的端口
+### 查看主机开放的端口
 
 ```bash
 root@Peter-VM:~# netstat -tnlp
@@ -21,7 +21,7 @@ tcp6       0      0 :::3306                 :::*                    LISTEN      
 tcp6       0      0 :::6379                 :::*                    LISTEN      30781/docker-proxy
 ```
 
-#### 查看指定端口对应的进程
+### 查看指定端口对应的进程
 
 ```bash
 root@Peter-VM:~# netstat -anlp | grep ':80'
@@ -42,10 +42,10 @@ Swap:          947M          0B        947M
 
 
 
-## 二、测试图览![测试工具](./img/linux_benchmarking_tools.png)
+# 二、测试图览![测试工具](./img/linux_benchmarking_tools.png)
 
 
 
 
 
-## Linux性能调优工具图览![调优工具](img/linux_tuning_tools.png)
+# 三、调优图览![调优工具](img/linux_tuning_tools.png)

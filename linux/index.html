@@ -13,19 +13,18 @@
 
   <link rel="stylesheet" href="../css/theme.css" type="text/css" />
   <link rel="stylesheet" href="../css/theme_extra.css" type="text/css" />
-  <link rel="stylesheet" href="//cdnjs.cloudflare.com/ajax/libs/highlight.js/9.12.0/styles/github.min.css">
+  <link rel="stylesheet" href="../css/highlight.css">
   
   <script>
     // Current page data
     var mkdocs_page_name = "Linux\u4f7f\u7528\u7b14\u8bb0";
     var mkdocs_page_input_path = "linux.md";
-    var mkdocs_page_url = null;
+    var mkdocs_page_url = "/linux/";
   </script>
   
-  <script src="../js/jquery-2.1.1.min.js" defer></script>
-  <script src="../js/modernizr-2.8.3.min.js" defer></script>
-  <script src="//cdnjs.cloudflare.com/ajax/libs/highlight.js/9.12.0/highlight.min.js"></script>
-  <script>hljs.initHighlightingOnLoad();</script> 
+  <script src="../js/jquery-2.1.1.min.js"></script>
+  <script src="../js/modernizr-2.8.3.min.js"></script>
+  <script type="text/javascript" src="../js/highlight.pack.js"></script> 
   
 </head>
 
@@ -39,7 +38,7 @@
         <a href=".." class="icon icon-home"> MkLorum</a>
         <div role="search">
   <form id ="rtd-search-form" class="wy-form" action="../search.html" method="get">
-    <input type="text" name="q" placeholder="Search docs" title="Type search term here" />
+    <input type="text" name="q" placeholder="Search docs" />
   </form>
 </div>
       </div>
@@ -60,11 +59,22 @@
             
     <li class="toctree-l2"><a href="#linux">Linux使用笔记</a></li>
     
+
+    <li class="toctree-l2"><a href="#_1">一、性能图览</a></li>
+    
         <ul>
         
-            <li><a class="toctree-l3" href="#_1">一、常用命令</a></li>
+            <li><a class="toctree-l3" href="#1-netstat">1. netstat</a></li>
+        
+            <li><a class="toctree-l3" href="#2-free">2. free</a></li>
         
         </ul>
+    
+
+    <li class="toctree-l2"><a href="#_4">二、测试图览</a></li>
+    
+
+    <li class="toctree-l2"><a href="#_5">三、调优图览</a></li>
     
 
     </ul>
@@ -113,10 +123,9 @@
             <div class="section">
               
                 <h1 id="linux">Linux使用笔记</h1>
-<h2 id="_1">一、常用命令</h2>
-<h3 id="_2">性能查看工具图览<img alt="Linux性能查看工具图览" src="../img/linux_observability_tools.png" /></h3>
-<h4 id="1-netstat">1. netstat</h4>
-<h5 id="_3">查看主机开放的端口</h5>
+<h1 id="_1">一、性能图览<img alt="Linux性能查看工具图览" src="../img/linux_observability_tools.png" /></h1>
+<h2 id="1-netstat">1. netstat</h2>
+<h3 id="_2">查看主机开放的端口</h3>
 <pre><code class="bash">root@Peter-VM:~# netstat -tnlp
 Active Internet connections (only servers)
 Proto Recv-Q Send-Q Local Address           Foreign Address         State       PID/Program name    
@@ -131,14 +140,21 @@ tcp6       0      0 :::3306                 :::*                    LISTEN      
 tcp6       0      0 :::6379                 :::*                    LISTEN      30781/docker-proxy
 </code></pre>
 
-<h5 id="_4">查看指定端口对应的进程</h5>
+<h3 id="_3">查看指定端口对应的进程</h3>
 <pre><code class="bash">root@Peter-VM:~# netstat -anlp | grep ':80'
 tcp        0      0 0.0.0.0:80              0.0.0.0:*               LISTEN      16740/python3       
 tcp        0      0 172.18.29.203:53224     100.100.30.26:80        ESTABLISHED 23045/AliYunDun  
 </code></pre>
 
-<h3 id="linux_1">Linux性能测试工具图览<img alt="测试工具" src="../img/linux_benchmarking_tools.png" /></h3>
-<h3 id="linux_2">Linux性能调优工具图览<img alt="调优工具" src="../img/linux_tuning_tools.png" /></h3>
+<h2 id="2-free">2. free</h2>
+<pre><code class="bash">root@Peter-VM:~# free -h
+              total        used        free      shared  buff/cache   available
+Mem:           985M        676M         80M        5.3M        228M        163M
+Swap:          947M          0B        947M
+</code></pre>
+
+<h1 id="_4">二、测试图览<img alt="测试工具" src="../img/linux_benchmarking_tools.png" /></h1>
+<h1 id="_5">三、调优图览<img alt="调优工具" src="../img/linux_tuning_tools.png" /></h1>
               
             </div>
           </div>
@@ -183,8 +199,9 @@ tcp        0      0 172.18.29.203:53224     100.100.30.26:80        ESTABLISHED 
     </span>
 </div>
     <script>var base_url = '..';</script>
-    <script src="../js/theme.js" defer></script>
-      <script src="../search/main.js" defer></script>
+    <script src="../js/theme.js"></script>
+      <script src="../search/require.js"></script>
+      <script src="../search/search.js"></script>
 
 </body>
 </html>
