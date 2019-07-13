@@ -1,6 +1,10 @@
-# Peter-Doc
+# 开篇
 
-For full documentation visit [mkdocs.org](https://mkdocs.org).
+# 其实我是个懒人
+
+
+
+
 
 ## Commands
 
@@ -15,3 +19,9 @@ For full documentation visit [mkdocs.org](https://mkdocs.org).
     docs/
         index.md  # The documentation homepage.
         ...       # Other markdown pages, images and other files.
+
+| 分类 | 子类 | 工号 |
+| ---- | ---- | ---- |
+|      |      |      |
+
+> 短发短发

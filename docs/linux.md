@@ -1,4 +1,4 @@
-# Linux使用笔记
+# Linux
 
 # 一、性能图览![Linux性能查看工具图览](./img/linux_observability_tools.png)
 
