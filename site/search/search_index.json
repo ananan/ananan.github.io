@@ -2,28 +2,13 @@
     "docs": [
         {
             "location": "/", 
-            "text": "\u5f00\u7bc7\n\n\n\u5176\u5b9e\u6211\u662f\u4e2a\u61d2\u4eba\n\n\nCommands\n\n\n\n\nmkdocs new [dir-name]\n - Create a new project.\n\n\nmkdocs serve\n - Start the live-reloading docs server.\n\n\nmkdocs build\n - Build the documentation site.\n\n\nmkdocs help\n - Print this help message.\n\n\n\n\nProject layout\n\n\nmkdocs.yml    # The configuration file.\ndocs/\n    index.md  # The documentation homepage.\n    ...       # Other markdown pages, images and other files.\n\n\n\n\n\n\n\n\n\n\u5206\u7c7b\n\n\n\u5b50\u7c7b\n\n\n\u5de5\u53f7\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\u77ed\u53d1\u77ed\u53d1", 
+            "text": "\u5f00\u7bc7\n\n\n\n\n\u77e5\u4eba\u8005\u667a, \u81ea\u77e5\u8005\u660e. \u80dc\u4eba\u8005\u6709\u529b, \u81ea\u80dc\u8005\u5f3a.                                       \u2014\u300a\u9053\u5fb7\u7ecf-\u7b2c\u4e09\u5341\u4e09\u7ae0\u300b", 
             "title": "\u5f00\u7bc7"
         }, 
         {
             "location": "/#_1", 
-            "text": "", 
+            "text": "\u77e5\u4eba\u8005\u667a, \u81ea\u77e5\u8005\u660e. \u80dc\u4eba\u8005\u6709\u529b, \u81ea\u80dc\u8005\u5f3a.                                       \u2014\u300a\u9053\u5fb7\u7ecf-\u7b2c\u4e09\u5341\u4e09\u7ae0\u300b", 
             "title": "\u5f00\u7bc7"
-        }, 
-        {
-            "location": "/#_2", 
-            "text": "", 
-            "title": "\u5176\u5b9e\u6211\u662f\u4e2a\u61d2\u4eba"
-        }, 
-        {
-            "location": "/#commands", 
-            "text": "mkdocs new [dir-name]  - Create a new project.  mkdocs serve  - Start the live-reloading docs server.  mkdocs build  - Build the documentation site.  mkdocs help  - Print this help message.", 
-            "title": "Commands"
-        }, 
-        {
-            "location": "/#project-layout", 
-            "text": "mkdocs.yml    # The configuration file.\ndocs/\n    index.md  # The documentation homepage.\n    ...       # Other markdown pages, images and other files.     \u5206\u7c7b  \u5b50\u7c7b  \u5de5\u53f7             \u77ed\u53d1\u77ed\u53d1", 
-            "title": "Project layout"
         }, 
         {
             "location": "/docker/", 
@@ -129,6 +114,31 @@
             "location": "/nginx/#reload", 
             "text": "nginx -s reload (\u652f\u6301\u70ed\u542f\u52a8\u4f7f\u914d\u7f6e\u751f\u6548)", 
             "title": "\u4e09\u3001Reload"
+        }, 
+        {
+            "location": "/\u5982\u4f55\u4f18\u96c5\u5730\u642d\u5efa\u4e2a\u4eba\u535a\u5ba2/", 
+            "text": "\u5982\u4f55\u4f18\u96c5\u5730\u642d\u5efa\u4e2a\u4eba\u535a\u5ba2\n\n\n\u4e3a\u4ec0\u4e48\u8981\u642d\u5efa\u4e2a\u4eba\u535a\u5ba2\n\n\n\u642d\u5efa\u4e2a\u4eba\u535a\u5ba2\u65b9\u5f0f\u6709\u54ea\u4e9b\n\n\n\u6700\u4f18\u96c5\u7684\u65b9\u5f0f", 
+            "title": "\u5982\u4f55\u4f18\u96c5\u5730\u642d\u5efa\u4e2a\u4eba\u535a\u5ba2"
+        }, 
+        {
+            "location": "/\u5982\u4f55\u4f18\u96c5\u5730\u642d\u5efa\u4e2a\u4eba\u535a\u5ba2/#_1", 
+            "text": "", 
+            "title": "\u5982\u4f55\u4f18\u96c5\u5730\u642d\u5efa\u4e2a\u4eba\u535a\u5ba2"
+        }, 
+        {
+            "location": "/\u5982\u4f55\u4f18\u96c5\u5730\u642d\u5efa\u4e2a\u4eba\u535a\u5ba2/#_2", 
+            "text": "", 
+            "title": "\u4e3a\u4ec0\u4e48\u8981\u642d\u5efa\u4e2a\u4eba\u535a\u5ba2"
+        }, 
+        {
+            "location": "/\u5982\u4f55\u4f18\u96c5\u5730\u642d\u5efa\u4e2a\u4eba\u535a\u5ba2/#_3", 
+            "text": "", 
+            "title": "\u642d\u5efa\u4e2a\u4eba\u535a\u5ba2\u65b9\u5f0f\u6709\u54ea\u4e9b"
+        }, 
+        {
+            "location": "/\u5982\u4f55\u4f18\u96c5\u5730\u642d\u5efa\u4e2a\u4eba\u535a\u5ba2/#_4", 
+            "text": "", 
+            "title": "\u6700\u4f18\u96c5\u7684\u65b9\u5f0f"
         }
     ]
 }

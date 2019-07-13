@@ -1,27 +1,4 @@
 # 开篇
 
-# 其实我是个懒人
+> 知人者智, 自知者明. 胜人者有力, 自胜者强.                                       —《道德经-第三十三章》
 
-
-
-
-
-## Commands
-
-* `mkdocs new [dir-name]` - Create a new project.
-* `mkdocs serve` - Start the live-reloading docs server.
-* `mkdocs build` - Build the documentation site.
-* `mkdocs help` - Print this help message.
-
-## Project layout
-
-    mkdocs.yml    # The configuration file.
-    docs/
-        index.md  # The documentation homepage.
-        ...       # Other markdown pages, images and other files.
-
-| 分类 | 子类 | 工号 |
-| ---- | ---- | ---- |
-|      |      |      |
-
-> 短发短发
