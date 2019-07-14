@@ -1,0 +1,217 @@
+<!DOCTYPE html>
+<!--[if IE 8]><html class="no-js lt-ie9" lang="en" > <![endif]-->
+<!--[if gt IE 8]><!--> <html class="no-js" lang="en" > <!--<![endif]-->
+<head>
+  <meta charset="utf-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  
+  
+  <link rel="shortcut icon" href="../img/favicon.ico">
+  <title>Linux - Peter-Notes</title>
+  <link href='https://fonts.googleapis.com/css?family=Lato:400,700|Roboto+Slab:400,700|Inconsolata:400,700' rel='stylesheet' type='text/css'>
+
+  <link rel="stylesheet" href="../css/theme.css" type="text/css" />
+  <link rel="stylesheet" href="../css/theme_extra.css" type="text/css" />
+  <link rel="stylesheet" href="../css/highlight.css">
+  
+  <script>
+    // Current page data
+    var mkdocs_page_name = "Linux";
+    var mkdocs_page_input_path = "Linux\u5907\u5fd8\u5f55.md";
+    var mkdocs_page_url = "/Linux\u5907\u5fd8\u5f55/";
+  </script>
+  
+  <script src="../js/jquery-2.1.1.min.js"></script>
+  <script src="../js/modernizr-2.8.3.min.js"></script>
+  <script type="text/javascript" src="../js/highlight.pack.js"></script> 
+  
+</head>
+
+<body class="wy-body-for-nav" role="document">
+
+  <div class="wy-grid-for-nav">
+
+    
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side stickynav">
+      <div class="wy-side-nav-search">
+        <a href=".." class="icon icon-home"> Peter-Notes</a>
+        <div role="search">
+  <form id ="rtd-search-form" class="wy-form" action="../search.html" method="get">
+    <input type="text" name="q" placeholder="Search docs" />
+  </form>
+</div>
+      </div>
+
+      <div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="main navigation">
+	<ul class="current">
+	  
+          
+            <li class="toctree-l1">
+		
+    <a class="" href="..">开篇</a>
+	    </li>
+          
+            <li class="toctree-l1">
+		
+    <a class="" href="../Docker入门笔记/">Docker入门笔记</a>
+	    </li>
+          
+            <li class="toctree-l1 current">
+		
+    <a class="current" href="./">Linux</a>
+    <ul class="subnav">
+            
+    <li class="toctree-l2"><a href="#linux">Linux</a></li>
+    
+
+    <li class="toctree-l2"><a href="#_1">一、性能图览</a></li>
+    
+        <ul>
+        
+            <li><a class="toctree-l3" href="#1-netstat">1. netstat</a></li>
+        
+            <li><a class="toctree-l3" href="#2-free">2. free</a></li>
+        
+        </ul>
+    
+
+    <li class="toctree-l2"><a href="#_4">二、测试图览</a></li>
+    
+
+    <li class="toctree-l2"><a href="#_5">三、调优图览</a></li>
+    
+
+    </ul>
+	    </li>
+          
+            <li class="toctree-l1">
+		
+    <a class="" href="../MySQL常用操作/">MySQL常用操作</a>
+	    </li>
+          
+            <li class="toctree-l1">
+		
+    <a class="" href="../Nginx常用配置/">Nginx常用配置</a>
+	    </li>
+          
+            <li class="toctree-l1">
+		
+    <a class="" href="../personalblog/">Personalblog</a>
+	    </li>
+          
+        </ul>
+      </div>
+      &nbsp;
+    </nav>
+
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap">
+
+      
+      <nav class="wy-nav-top" role="navigation" aria-label="top navigation">
+        <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+        <a href="..">Peter-Notes</a>
+      </nav>
+
+      
+      <div class="wy-nav-content">
+        <div class="rst-content">
+          <div role="navigation" aria-label="breadcrumbs navigation">
+  <ul class="wy-breadcrumbs">
+    <li><a href="..">Docs</a> &raquo;</li>
+    
+      
+    
+    <li>Linux</li>
+    <li class="wy-breadcrumbs-aside">
+      
+    </li>
+  </ul>
+  <hr/>
+</div>
+          <div role="main">
+            <div class="section">
+              
+                <h1 id="linux">Linux</h1>
+<h1 id="_1">一、性能图览<img alt="Linux性能查看工具图览" src="../img/linux_observability_tools.png" /></h1>
+<h2 id="1-netstat">1. netstat</h2>
+<h3 id="_2">查看主机开放的端口</h3>
+<pre><code class="bash">root@Peter-VM:~# netstat -tnlp
+Active Internet connections (only servers)
+Proto Recv-Q Send-Q Local Address           Foreign Address         State       PID/Program name    
+tcp        0      0 0.0.0.0:22345           0.0.0.0:*               LISTEN      15262/sshd          
+tcp        0      0 127.0.0.1:44077         0.0.0.0:*               LISTEN      864/containerd      
+tcp        0      0 0.0.0.0:80              0.0.0.0:*               LISTEN      16740/python3       
+tcp        0      0 127.0.0.53:53           0.0.0.0:*               LISTEN      323/systemd-resolve 
+tcp        0      0 127.0.0.1:6010          0.0.0.0:*               LISTEN      13972/sshd: root@pt 
+tcp        0      0 127.0.0.1:6011          0.0.0.0:*               LISTEN      15991/sshd: root@pt 
+tcp6       0      0 :::27017                :::*                    LISTEN      30114/docker-proxy  
+tcp6       0      0 :::3306                 :::*                    LISTEN      30448/docker-proxy  
+tcp6       0      0 :::6379                 :::*                    LISTEN      30781/docker-proxy
+</code></pre>
+
+<h3 id="_3">查看指定端口对应的进程</h3>
+<pre><code class="bash">root@Peter-VM:~# netstat -anlp | grep ':80'
+tcp        0      0 0.0.0.0:80              0.0.0.0:*               LISTEN      16740/python3       
+tcp        0      0 172.18.29.203:53224     100.100.30.26:80        ESTABLISHED 23045/AliYunDun  
+</code></pre>
+
+<h2 id="2-free">2. free</h2>
+<pre><code class="bash">root@Peter-VM:~# free -h
+              total        used        free      shared  buff/cache   available
+Mem:           985M        676M         80M        5.3M        228M        163M
+Swap:          947M          0B        947M
+</code></pre>
+
+<h1 id="_4">二、测试图览<img alt="测试工具" src="../img/linux_benchmarking_tools.png" /></h1>
+<h1 id="_5">三、调优图览<img alt="调优工具" src="../img/linux_tuning_tools.png" /></h1>
+              
+            </div>
+          </div>
+          <footer>
+  
+    <div class="rst-footer-buttons" role="navigation" aria-label="footer navigation">
+      
+        <a href="../MySQL常用操作/" class="btn btn-neutral float-right" title="MySQL常用操作">Next <span class="icon icon-circle-arrow-right"></span></a>
+      
+      
+        <a href="../Docker入门笔记/" class="btn btn-neutral" title="Docker入门笔记"><span class="icon icon-circle-arrow-left"></span> Previous</a>
+      
+    </div>
+  
+
+  <hr/>
+
+  <div role="contentinfo">
+    <!-- Copyright etc -->
+    
+  </div>
+
+  Built with <a href="http://www.mkdocs.org">MkDocs</a> using a <a href="https://github.com/snide/sphinx_rtd_theme">theme</a> provided by <a href="https://readthedocs.org">Read the Docs</a>.
+</footer>
+      
+        </div>
+      </div>
+
+    </section>
+
+  </div>
+
+  <div class="rst-versions" role="note" style="cursor: pointer">
+    <span class="rst-current-version" data-toggle="rst-current-version">
+      
+      
+        <span><a href="../Docker入门笔记/" style="color: #fcfcfc;">&laquo; Previous</a></span>
+      
+      
+        <span style="margin-left: 15px"><a href="../MySQL常用操作/" style="color: #fcfcfc">Next &raquo;</a></span>
+      
+    </span>
+</div>
+    <script>var base_url = '..';</script>
+    <script src="../js/theme.js"></script>
+      <script src="../search/require.js"></script>
+      <script src="../search/search.js"></script>
+
+</body>
+</html>
