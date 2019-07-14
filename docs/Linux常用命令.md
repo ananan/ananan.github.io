@@ -1,6 +1,6 @@
-# Linux
+# Linux常用命令
 
-# 一、性能图览![Linux性能查看工具图览](./img/linux_observability_tools.png)
+# 一、性能篇![Linux性能查看工具图览](./img/linux_observability_tools.png)
 
 ## 1. netstat
 
@@ -42,10 +42,10 @@ Swap:          947M          0B        947M
 
 
 
-# 二、测试图览![测试工具](./img/linux_benchmarking_tools.png)
+# 二、测试篇![测试工具](./img/linux_benchmarking_tools.png)
 
 
 
 
 
-# 三、调优图览![调优工具](img/linux_tuning_tools.png)
+# 三、调优篇![调优工具](img/linux_tuning_tools.png)
