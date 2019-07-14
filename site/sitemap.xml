@@ -4,47 +4,47 @@
     
     <url>
      <loc>/</loc>
-     <lastmod>2019-07-14</lastmod>
+     <lastmod>2019-07-15</lastmod>
      <changefreq>daily</changefreq>
     </url>
     
 
     
     <url>
-     <loc>/docker/</loc>
-     <lastmod>2019-07-14</lastmod>
+     <loc>/Docker入门笔记/</loc>
+     <lastmod>2019-07-15</lastmod>
      <changefreq>daily</changefreq>
     </url>
     
 
     
     <url>
-     <loc>/linux/</loc>
-     <lastmod>2019-07-14</lastmod>
+     <loc>/Linux备忘录/</loc>
+     <lastmod>2019-07-15</lastmod>
      <changefreq>daily</changefreq>
     </url>
     
 
     
     <url>
-     <loc>/mysql/</loc>
-     <lastmod>2019-07-14</lastmod>
+     <loc>/MySQL常用操作/</loc>
+     <lastmod>2019-07-15</lastmod>
      <changefreq>daily</changefreq>
     </url>
     
 
     
     <url>
-     <loc>/nginx/</loc>
-     <lastmod>2019-07-14</lastmod>
+     <loc>/Nginx常用配置/</loc>
+     <lastmod>2019-07-15</lastmod>
      <changefreq>daily</changefreq>
     </url>
     
 
     
     <url>
-     <loc>/如何优雅地搭建个人博客/</loc>
-     <lastmod>2019-07-14</lastmod>
+     <loc>/personalblog/</loc>
+     <lastmod>2019-07-15</lastmod>
      <changefreq>daily</changefreq>
     </url>
     

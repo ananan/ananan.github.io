@@ -1,0 +1,271 @@
+<!DOCTYPE html>
+<!--[if IE 8]><html class="no-js lt-ie9" lang="en" > <![endif]-->
+<!--[if gt IE 8]><!--> <html class="no-js" lang="en" > <!--<![endif]-->
+<head>
+  <meta charset="utf-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  
+  
+  <link rel="shortcut icon" href="../img/favicon.ico">
+  <title>如何优雅地搭建个人博客 - Peter-Notes</title>
+  <link href='https://fonts.googleapis.com/css?family=Lato:400,700|Roboto+Slab:400,700|Inconsolata:400,700' rel='stylesheet' type='text/css'>
+
+  <link rel="stylesheet" href="../css/theme.css" type="text/css" />
+  <link rel="stylesheet" href="../css/theme_extra.css" type="text/css" />
+  <link rel="stylesheet" href="../css/highlight.css">
+  
+  <script>
+    // Current page data
+    var mkdocs_page_name = "\u5982\u4f55\u4f18\u96c5\u5730\u642d\u5efa\u4e2a\u4eba\u535a\u5ba2";
+    var mkdocs_page_input_path = "personalblog.md";
+    var mkdocs_page_url = "/personalblog/";
+  </script>
+  
+  <script src="../js/jquery-2.1.1.min.js"></script>
+  <script src="../js/modernizr-2.8.3.min.js"></script>
+  <script type="text/javascript" src="../js/highlight.pack.js"></script> 
+  
+</head>
+
+<body class="wy-body-for-nav" role="document">
+
+  <div class="wy-grid-for-nav">
+
+    
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side stickynav">
+      <div class="wy-side-nav-search">
+        <a href=".." class="icon icon-home"> Peter-Notes</a>
+        <div role="search">
+  <form id ="rtd-search-form" class="wy-form" action="../search.html" method="get">
+    <input type="text" name="q" placeholder="Search docs" />
+  </form>
+</div>
+      </div>
+
+      <div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="main navigation">
+	<ul class="current">
+	  
+          
+            <li class="toctree-l1">
+		
+    <a class="" href="..">开篇</a>
+	    </li>
+          
+            <li class="toctree-l1">
+		
+    <a class="" href="../Docker入门笔记/">Docker入门笔记</a>
+	    </li>
+          
+            <li class="toctree-l1">
+		
+    <a class="" href="../Linux备忘录/">Linux</a>
+	    </li>
+          
+            <li class="toctree-l1">
+		
+    <a class="" href="../MySQL常用操作/">MySQL常用操作</a>
+	    </li>
+          
+            <li class="toctree-l1">
+		
+    <a class="" href="../Nginx常用配置/">Nginx</a>
+	    </li>
+          
+            <li class="toctree-l1 current">
+		
+    <a class="current" href="./">如何优雅地搭建个人博客</a>
+    <ul class="subnav">
+            
+    <li class="toctree-l2"><a href="#_1">如何优雅地搭建个人博客</a></li>
+    
+
+    <li class="toctree-l2"><a href="#_2">为什么要搭建个人博客?</a></li>
+    
+        <ul>
+        
+            <li><a class="toctree-l3" href="#1">1. 好记性不如烂笔头</a></li>
+        
+            <li><a class="toctree-l3" href="#2">2. 碎片化网络时代下的自我审视</a></li>
+        
+        </ul>
+    
+
+    <li class="toctree-l2"><a href="#_3">搭建个人博客方式有哪些?</a></li>
+    
+        <ul>
+        
+            <li><a class="toctree-l3" href="#1_1">1. 小白流</a></li>
+        
+            <li><a class="toctree-l3" href="#2_1">2. 技术流</a></li>
+        
+        </ul>
+    
+
+    <li class="toctree-l2"><a href="#_4">最优雅的方式</a></li>
+    
+        <ul>
+        
+            <li><a class="toctree-l3" href="#1-mkdocs">1. 下载mkdocs</a></li>
+        
+            <li><a class="toctree-l3" href="#2_2">2. 编写博客</a></li>
+        
+            <li><a class="toctree-l3" href="#3">3. 部署博客</a></li>
+        
+        </ul>
+    
+
+    </ul>
+	    </li>
+          
+        </ul>
+      </div>
+      &nbsp;
+    </nav>
+
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap">
+
+      
+      <nav class="wy-nav-top" role="navigation" aria-label="top navigation">
+        <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+        <a href="..">Peter-Notes</a>
+      </nav>
+
+      
+      <div class="wy-nav-content">
+        <div class="rst-content">
+          <div role="navigation" aria-label="breadcrumbs navigation">
+  <ul class="wy-breadcrumbs">
+    <li><a href="..">Docs</a> &raquo;</li>
+    
+      
+    
+    <li>如何优雅地搭建个人博客</li>
+    <li class="wy-breadcrumbs-aside">
+      
+    </li>
+  </ul>
+  <hr/>
+</div>
+          <div role="main">
+            <div class="section">
+              
+                <h1 id="_1">如何优雅地搭建个人博客</h1>
+<h1 id="_2">为什么要搭建个人博客?</h1>
+<h3 id="1">1. 好记性不如烂笔头</h3>
+<p>​   随着年龄的增长, 记忆力衰退不可避免. 在学习和工作中很多经验都可以通过博客记录下来, 同时写博客也是一种反思总结的过程. 否则一味依赖于搜索引擎, 个人知识体系难已建立.</p>
+<h3 id="2">2. 碎片化网络时代下的自我审视</h3>
+<p>​   当下随着移动互联网的快速发展, 智能设备终端的快速普及, 网上“地球村”基本已经实现, 微信、Facebook加起来已超过地球近半人口, 更别说微博、推特等公众社交媒体. 各种观点、视野、思想在碰撞, 网络碎片化已成现实, 如何在这个网络时代下寻求自我审视的空间, 个人博客是一种较好的方式.</p>
+<h1 id="_3">搭建个人博客方式有哪些?</h1>
+<h3 id="1_1">1. 小白流</h3>
+<p>​   在博客园、简书、CSDN、知乎专栏或一些类似于Lofter等网站开个账号即可. </p>
+<p>​   此种方式优势是简单快速无门槛, 网站流量大, 认可度高, 高质量文章可轻松获取大量阅读量, 缺点是没什么个性, 缺少定制, 而且文章编辑器往往比较丑, 比如博客园和CSDN的编辑器私以为就比较丑, 这些网站我都写过一些文章, 质量比较水, 都坚持不久就懒得写了.</p>
+<h3 id="2_1">2. 技术流</h3>
+<p>​   使用开源CMS系统或借用开源框架手动撸一个博客网站对大多数程序员都不是什么难事, 常用的比如CMS 比如WordPress使用简单, 功能插件定制也非常多, 甚至一些电商网站都可以直接套用. 高级一点的, 用Python的Django/Flask或Golang直接搭一个难度也不大, 甚至在搭建过程中可以快速学习到新的语言或框架. </p>
+<p>​   对于这类技术流方式, 除了把软件包开发出来, 如何部署维护你的个人博客就是个问题了. 为了让自己的博客可以分享在互联网上, 你还需要注册个域名, 买个服务器或租个网页空间来部署你的网站, 而部署好后你会发现自己的博客文章几乎没什么阅读量, 因为站点流量太小, 其他用户很难通过搜索引擎看到你的博客. 最终发现劳心费力搞的个人博客只是一个自己的私有网络记事本, 这还蛮打击写作的心态的.</p>
+<h1 id="_4">最优雅的方式</h1>
+<p>​   能不能结合以上两种方式的优点, 同时又避免两者的缺点呢? 如果能在本地以Markdown的方式写好博客文档, 然后快速将文档部署到大流量的网站, 方便更多人查阅就好了. 确实还真有. <code>mkdocs+Git Page</code>就可以做到, 而且只需要三步即可部署好.</p>
+<h3 id="1-mkdocs">1. 下载mkdocs</h3>
+<p><a href="https://github.com/mkdocs/mkdocs">mkdocs项目</a> 是一个可以将markdown文档转化为html页面到开源项目, 我们可以在Linux环境中通过一下命令下载安装它:</p>
+<pre><code class="bash">pip3 install mkdocs
+</code></pre>
+
+<p>值得注意的是该项目使用了tornado框架作为开发服务器, 而tornado需要Python3.5以上的版本, 因此如果需要使用pip3来下载, 如果缺少pip3可以使用一下命令安装pip3:</p>
+<pre><code class="bash">apt-get install python3-pip
+</code></pre>
+
+<h3 id="2_2">2. 编写博客</h3>
+<p>写博客之前我们需要创建一个mkdocs项目:</p>
+<pre><code class="bash">cd /home/peter/blog
+~/blog mkdocs new gitpage
+INFO    -  Creating project directory: gitpage
+INFO    -  Writing config file: gitpage/mkdocs.yml
+INFO    -  Writing initial docs: gitpage/docs/index.md
+~/blog ls
+gitpage 
+</code></pre>
+
+<p>创建好项目后可以直接运行:</p>
+<pre><code class="bash">~/blog/gitpage ls
+docs       mkdocs.yml
+~/blog/gitpage mkdocs serve -a 0.0.0.0:8888
+INFO    -  Building documentation...
+INFO    -  Cleaning site directory
+[I 190714 23:29:36 server:283] Serving on http://0.0.0.0:8888
+[I 190714 23:29:36 handlers:60] Start watching changes
+[I 190714 23:29:36 handlers:62] Start detecting changes
+</code></pre>
+
+<p>然后打开浏览器复制上面的链接即可看到效果:</p>
+<p><img alt="image-20190714233243341" src="../img/image-20190714233243341.png" /></p>
+<p>可以改一下主题和站点名称:</p>
+<pre><code class="bash">~/blog/gitpage vi mkdocs.yml
+~/blog/gitpage cat mkdocs.yml
+site_name: My Blog
+theme: readthedocs
+</code></pre>
+
+<p>重新跑起来, 打开浏览器即可看到效果:</p>
+<p><img alt="image-20190714233741213" src="../img/image-20190714233741213.png" /></p>
+<p>然后用你喜爱的Markdown编辑工具打开gitpage这个目录, 在docs里新建markdown文档写作即可, 我个人推荐使用 <a href="https://www.typora.io/">Typora编辑器</a>, 开源, 界面漂亮, 功能齐全, Markdown文档还可边写边预览效果, 导出的word和pdf文档的功能也很实用, 平时工作写文档必备神器</p>
+<p><img alt="image-20190714234212833" src="../img/image-20190714234212833.png" /></p>
+<h3 id="3">3. 部署博客</h3>
+<p>上面我们在docs目录下编写好了我们的文档, 这时候只需使用如下命令即可转换成html页面:</p>
+<pre><code>~/blog/gitpage mkdocs build
+INFO    -  Cleaning site directory
+INFO    -  Building documentation to directory: /Users/peter/blog/gitpage/site
+~/blog/gitpage ls
+docs       mkdocs.yml site
+~/blog/gitpage ls site
+404.html    css         fonts       img         index.html  js          search      search.html sitemap.xml
+</code></pre>
+
+<p>在你的git仓库中新建一个git page仓库, 然后将上述site目录复制到新建的git page仓库里, push到master分支即可完成部署, 部署完成后效果:</p>
+<p><img alt="image-20190714235338451" src="../img/image-20190714235338451.png" /></p>
+<p>最终整个博客就可以相当于一个git仓库维护即可, 平时使用Typora等编辑器本地编写好博客, mkdocs serve命令即时预览, 然后将改动推送到远程master分支即可.</p>
+              
+            </div>
+          </div>
+          <footer>
+  
+    <div class="rst-footer-buttons" role="navigation" aria-label="footer navigation">
+      
+      
+        <a href="../Nginx常用配置/" class="btn btn-neutral" title="Nginx"><span class="icon icon-circle-arrow-left"></span> Previous</a>
+      
+    </div>
+  
+
+  <hr/>
+
+  <div role="contentinfo">
+    <!-- Copyright etc -->
+    
+  </div>
+
+  Built with <a href="http://www.mkdocs.org">MkDocs</a> using a <a href="https://github.com/snide/sphinx_rtd_theme">theme</a> provided by <a href="https://readthedocs.org">Read the Docs</a>.
+</footer>
+      
+        </div>
+      </div>
+
+    </section>
+
+  </div>
+
+  <div class="rst-versions" role="note" style="cursor: pointer">
+    <span class="rst-current-version" data-toggle="rst-current-version">
+      
+      
+        <span><a href="../Nginx常用配置/" style="color: #fcfcfc;">&laquo; Previous</a></span>
+      
+      
+    </span>
+</div>
+    <script>var base_url = '..';</script>
+    <script src="../js/theme.js"></script>
+      <script src="../search/require.js"></script>
+      <script src="../search/search.js"></script>
+
+</body>
+</html>
