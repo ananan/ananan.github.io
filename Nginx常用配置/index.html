@@ -1,0 +1,274 @@
+<!DOCTYPE html>
+<!--[if IE 8]><html class="no-js lt-ie9" lang="en" > <![endif]-->
+<!--[if gt IE 8]><!--> <html class="no-js" lang="en" > <!--<![endif]-->
+<head>
+  <meta charset="utf-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  
+  
+  <link rel="shortcut icon" href="../img/favicon.ico">
+  <title>Nginx常用配置 - Peter-Notes</title>
+  <link href='https://fonts.googleapis.com/css?family=Lato:400,700|Roboto+Slab:400,700|Inconsolata:400,700' rel='stylesheet' type='text/css'>
+
+  <link rel="stylesheet" href="../css/theme.css" type="text/css" />
+  <link rel="stylesheet" href="../css/theme_extra.css" type="text/css" />
+  <link rel="stylesheet" href="//cdnjs.cloudflare.com/ajax/libs/highlight.js/9.12.0/styles/github.min.css">
+  
+  <script>
+    // Current page data
+    var mkdocs_page_name = "Nginx\u5e38\u7528\u914d\u7f6e";
+    var mkdocs_page_input_path = "Nginx\u5e38\u7528\u914d\u7f6e.md";
+    var mkdocs_page_url = null;
+  </script>
+  
+  <script src="../js/jquery-2.1.1.min.js" defer></script>
+  <script src="../js/modernizr-2.8.3.min.js" defer></script>
+  <script src="//cdnjs.cloudflare.com/ajax/libs/highlight.js/9.12.0/highlight.min.js"></script>
+  <script>hljs.initHighlightingOnLoad();</script> 
+  
+</head>
+
+<body class="wy-body-for-nav" role="document">
+
+  <div class="wy-grid-for-nav">
+
+    
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side stickynav">
+      <div class="wy-side-nav-search">
+        <a href=".." class="icon icon-home"> Peter-Notes</a>
+        <div role="search">
+  <form id ="rtd-search-form" class="wy-form" action="../search.html" method="get">
+    <input type="text" name="q" placeholder="Search docs" title="Type search term here" />
+  </form>
+</div>
+      </div>
+
+      <div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="main navigation">
+	<ul class="current">
+	  
+          
+            <li class="toctree-l1">
+		
+    <a class="" href="..">开篇</a>
+	    </li>
+          
+            <li class="toctree-l1">
+		
+    <a class="" href="../Docker入门笔记/">Docker入门笔记</a>
+	    </li>
+          
+            <li class="toctree-l1">
+		
+    <a class="" href="../Linux常用命令/">Linux常用命令</a>
+	    </li>
+          
+            <li class="toctree-l1">
+		
+    <a class="" href="../MySQL常用操作/">MySQL常用操作</a>
+	    </li>
+          
+            <li class="toctree-l1 current">
+		
+    <a class="current" href="./">Nginx常用配置</a>
+    <ul class="subnav">
+            
+    <li class="toctree-l2"><a href="#nginx">Nginx常用配置</a></li>
+    
+
+    <li class="toctree-l2"><a href="#_1">一、简介</a></li>
+    
+
+    <li class="toctree-l2"><a href="#nginx_1">二、Nginx应用场景</a></li>
+    
+        <ul>
+        
+            <li><a class="toctree-l3" href="#1">1. 静态服务器</a></li>
+        
+            <li><a class="toctree-l3" href="#2">2. 动静分离</a></li>
+        
+            <li><a class="toctree-l3" href="#3">3. 反向代理</a></li>
+        
+            <li><a class="toctree-l3" href="#4">4. 负载均衡</a></li>
+        
+        </ul>
+    
+
+    <li class="toctree-l2"><a href="#reload">三、Reload</a></li>
+    
+
+    </ul>
+	    </li>
+          
+            <li class="toctree-l1">
+		
+    <a class="" href="../如何优雅地搭建个人博客/">如何优雅地搭建个人博客</a>
+	    </li>
+          
+        </ul>
+      </div>
+      &nbsp;
+    </nav>
+
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap">
+
+      
+      <nav class="wy-nav-top" role="navigation" aria-label="top navigation">
+        <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+        <a href="..">Peter-Notes</a>
+      </nav>
+
+      
+      <div class="wy-nav-content">
+        <div class="rst-content">
+          <div role="navigation" aria-label="breadcrumbs navigation">
+  <ul class="wy-breadcrumbs">
+    <li><a href="..">Docs</a> &raquo;</li>
+    
+      
+    
+    <li>Nginx常用配置</li>
+    <li class="wy-breadcrumbs-aside">
+      
+    </li>
+  </ul>
+  <hr/>
+</div>
+          <div role="main">
+            <div class="section">
+              
+                <h1 id="nginx">Nginx常用配置</h1>
+<h1 id="_1">一、简介</h1>
+<p>​    nginx是一个单线程模型的高性能web服务器, 相比apache的多线程模型(即处理一个请求就要创建一个线程), nginx在linux里使用epoll事件模型可以获得很好的并发性能, 而且占用资源少, 轻量级, 不用它都不好意思说是做web的.</p>
+<h1 id="nginx_1">二、Nginx应用场景</h1>
+<h2 id="1">1. 静态服务器</h2>
+<p>静态资源服务器是一个web服务器的本职工作, nginx做得非常好, 其配置如下:</p>
+<pre><code class="json">server {
+    listen 80; #设置监听端口
+    server_name localhost; #设置主机名
+    client_max_body_size 1024M; #设置请求body最大为1GB
+
+    location / {
+            root /var/www/html;
+            index index.html;
+    }
+}
+</code></pre>
+
+<h2 id="2">2. 动静分离</h2>
+<p>现在后台架构主流都是这样了, 静态资源如html文件等直接nginx处理, 动态请求的通过tomcat、wsgi等动态服务处理, 其tomcat的配置如下:</p>
+<pre><code class="json">upstream test{
+    server localhost:8080;
+    server localhost:8081;
+    }
+server{
+    listen 80;
+    server_name localhost;
+
+    # 设置根目录index
+    location / {
+        root /var/www/html;  
+        index index.html;
+    }
+    # 正则匹配所有的静态资源
+    location ~ .(gif|jpg|jpeg|png|bmp|swf|css|js)${
+        root /var/www/html
+    }
+    # 正则匹配所有jsp和do文件并传给后段tomcat服务器处理
+    location ~ .(jsp|do)$ {
+        proxy_pass http://test; # 反向代理
+    }
+}
+</code></pre>
+
+<h2 id="3">3. 反向代理</h2>
+<p>反向代理是nginx最拿手的应用场景了, 可以有效将后端服务器与用户隔离开, 只需要暴露nginx的80端口端口, 同时也可以做负载均衡. 其配置如下:</p>
+<pre><code class="json">server { 
+    listen 80;
+    server_name localhost; #多个主机名可以用空格分开
+
+    location / { # ‘/’是代理所有的意思, 可以用正则来匹配
+        proxy_pass http://127.0.0.1:5000; # flask服务
+        proxy_set_header Host $host:$server_port;
+    }
+}
+</code></pre>
+
+<h2 id="4">4. 负载均衡</h2>
+<p>load balance是常见的业务需求, 当应对大量用户请求的时候, 负载均衡可以做到分机横向扩展, 还有keepalive机制, 是企业高可用的常见手法, 当然这是应用层的负载均衡, 还有F5硬件负载均衡(以前luxottica就用这个, 财大气粗), F5可以做到传输层和链路层级别的负载均衡, 速度更快性能更好但是更贵.</p>
+<p>负载均衡算法主要有:</p>
+<ul>
+<li>Round-Robin(轮训算法, nginx默认就是这个)</li>
+<li>ip_hash (对于client需要和后台服务保持session, 同一个ip转发到同一个服务器)</li>
+<li>weight (权重, 控制后端服务器从nginx接受到请求的权重, 适用与后端服务器性能不均匀的情况, 性能好的权重大一点)</li>
+</ul>
+<p>nginx负载均衡配置如下:</p>
+<pre><code class="json">    upstream test {
+        # 默认是Round-Robin算法, 就是轮训
+        ip_hash; # 指定使用ip_hash算法,保持session
+        server localhost:8080; (weight=6) # 可以加权重
+        server localhost:8081; (weight=4)
+    }
+    server {
+        listen       81;                                                         
+        server_name  localhost;                                               
+        client_max_body_size 1024M;
+
+        location / {
+            proxy_pass http://test;
+            proxy_set_header Host $host:$server_port;
+        }
+    }
+</code></pre>
+
+<h1 id="reload">三、Reload</h1>
+<p>nginx -s reload (支持热启动使配置生效)</p>
+              
+            </div>
+          </div>
+          <footer>
+  
+    <div class="rst-footer-buttons" role="navigation" aria-label="footer navigation">
+      
+        <a href="../如何优雅地搭建个人博客/" class="btn btn-neutral float-right" title="如何优雅地搭建个人博客">Next <span class="icon icon-circle-arrow-right"></span></a>
+      
+      
+        <a href="../MySQL常用操作/" class="btn btn-neutral" title="MySQL常用操作"><span class="icon icon-circle-arrow-left"></span> Previous</a>
+      
+    </div>
+  
+
+  <hr/>
+
+  <div role="contentinfo">
+    <!-- Copyright etc -->
+    
+  </div>
+
+  Built with <a href="http://www.mkdocs.org">MkDocs</a> using a <a href="https://github.com/snide/sphinx_rtd_theme">theme</a> provided by <a href="https://readthedocs.org">Read the Docs</a>.
+</footer>
+      
+        </div>
+      </div>
+
+    </section>
+
+  </div>
+
+  <div class="rst-versions" role="note" style="cursor: pointer">
+    <span class="rst-current-version" data-toggle="rst-current-version">
+      
+      
+        <span><a href="../MySQL常用操作/" style="color: #fcfcfc;">&laquo; Previous</a></span>
+      
+      
+        <span style="margin-left: 15px"><a href="../如何优雅地搭建个人博客/" style="color: #fcfcfc">Next &raquo;</a></span>
+      
+    </span>
+</div>
+    <script>var base_url = '..';</script>
+    <script src="../js/theme.js" defer></script>
+      <script src="../search/main.js" defer></script>
+
+</body>
+</html>

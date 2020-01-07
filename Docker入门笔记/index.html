@@ -1,0 +1,281 @@
+<!DOCTYPE html>
+<!--[if IE 8]><html class="no-js lt-ie9" lang="en" > <![endif]-->
+<!--[if gt IE 8]><!--> <html class="no-js" lang="en" > <!--<![endif]-->
+<head>
+  <meta charset="utf-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  
+  
+  <link rel="shortcut icon" href="../img/favicon.ico">
+  <title>Docker入门笔记 - Peter-Notes</title>
+  <link href='https://fonts.googleapis.com/css?family=Lato:400,700|Roboto+Slab:400,700|Inconsolata:400,700' rel='stylesheet' type='text/css'>
+
+  <link rel="stylesheet" href="../css/theme.css" type="text/css" />
+  <link rel="stylesheet" href="../css/theme_extra.css" type="text/css" />
+  <link rel="stylesheet" href="//cdnjs.cloudflare.com/ajax/libs/highlight.js/9.12.0/styles/github.min.css">
+  
+  <script>
+    // Current page data
+    var mkdocs_page_name = "Docker\u5165\u95e8\u7b14\u8bb0";
+    var mkdocs_page_input_path = "Docker\u5165\u95e8\u7b14\u8bb0.md";
+    var mkdocs_page_url = null;
+  </script>
+  
+  <script src="../js/jquery-2.1.1.min.js" defer></script>
+  <script src="../js/modernizr-2.8.3.min.js" defer></script>
+  <script src="//cdnjs.cloudflare.com/ajax/libs/highlight.js/9.12.0/highlight.min.js"></script>
+  <script>hljs.initHighlightingOnLoad();</script> 
+  
+</head>
+
+<body class="wy-body-for-nav" role="document">
+
+  <div class="wy-grid-for-nav">
+
+    
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side stickynav">
+      <div class="wy-side-nav-search">
+        <a href=".." class="icon icon-home"> Peter-Notes</a>
+        <div role="search">
+  <form id ="rtd-search-form" class="wy-form" action="../search.html" method="get">
+    <input type="text" name="q" placeholder="Search docs" title="Type search term here" />
+  </form>
+</div>
+      </div>
+
+      <div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="main navigation">
+	<ul class="current">
+	  
+          
+            <li class="toctree-l1">
+		
+    <a class="" href="..">开篇</a>
+	    </li>
+          
+            <li class="toctree-l1 current">
+		
+    <a class="current" href="./">Docker入门笔记</a>
+    <ul class="subnav">
+            
+    <li class="toctree-l2"><a href="#docker">Docker入门笔记</a></li>
+    
+
+    <li class="toctree-l2"><a href="#docker_1">一、Docker简介</a></li>
+    
+        <ul>
+        
+            <li><a class="toctree-l3" href="#1-docker">1. Docker是什么？</a></li>
+        
+            <li><a class="toctree-l3" href="#2-docker">2. Docker解决了什么问题？</a></li>
+        
+            <li><a class="toctree-l3" href="#3-docker">3. Docker有什么优点？</a></li>
+        
+            <li><a class="toctree-l3" href="#4-docker">4. Docker怎么实现的？</a></li>
+        
+        </ul>
+    
+
+    <li class="toctree-l2"><a href="#docker_2">二、Docker核心概念</a></li>
+    
+        <ul>
+        
+            <li><a class="toctree-l3" href="#1">1. 镜像</a></li>
+        
+            <li><a class="toctree-l3" href="#2">2. 容器</a></li>
+        
+            <li><a class="toctree-l3" href="#3">3. 仓库</a></li>
+        
+        </ul>
+    
+
+    <li class="toctree-l2"><a href="#docker_3">三、Docker安装使用</a></li>
+    
+        <ul>
+        
+            <li><a class="toctree-l3" href="#1-docker_1">1. 如何安装Docker？</a></li>
+        
+            <li><a class="toctree-l3" href="#2-docker_1">2. 使用Docker镜像</a></li>
+        
+            <li><a class="toctree-l3" href="#3-docker_1">3. 操作Docker容器</a></li>
+        
+            <li><a class="toctree-l3" href="#4-docker_1">4. 访问Docker仓库</a></li>
+        
+        </ul>
+    
+
+    <li class="toctree-l2"><a href="#docker_4">四、Docker数据管理</a></li>
+    
+
+    <li class="toctree-l2"><a href="#docker_5">五、Docker网络</a></li>
+    
+
+    <li class="toctree-l2"><a href="#dockerfile">六、Dockerfile介绍</a></li>
+    
+
+    <li class="toctree-l2"><a href="#docker_6">七、Docker实战案例</a></li>
+    
+
+    <li class="toctree-l2"><a href="#docker_7">八、Docker总结于思考</a></li>
+    
+
+    <li class="toctree-l2"><a href="#_2">九、参考资源</a></li>
+    
+
+    </ul>
+	    </li>
+          
+            <li class="toctree-l1">
+		
+    <a class="" href="../Linux常用命令/">Linux常用命令</a>
+	    </li>
+          
+            <li class="toctree-l1">
+		
+    <a class="" href="../MySQL常用操作/">MySQL常用操作</a>
+	    </li>
+          
+            <li class="toctree-l1">
+		
+    <a class="" href="../Nginx常用配置/">Nginx常用配置</a>
+	    </li>
+          
+            <li class="toctree-l1">
+		
+    <a class="" href="../如何优雅地搭建个人博客/">如何优雅地搭建个人博客</a>
+	    </li>
+          
+        </ul>
+      </div>
+      &nbsp;
+    </nav>
+
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap">
+
+      
+      <nav class="wy-nav-top" role="navigation" aria-label="top navigation">
+        <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+        <a href="..">Peter-Notes</a>
+      </nav>
+
+      
+      <div class="wy-nav-content">
+        <div class="rst-content">
+          <div role="navigation" aria-label="breadcrumbs navigation">
+  <ul class="wy-breadcrumbs">
+    <li><a href="..">Docs</a> &raquo;</li>
+    
+      
+    
+    <li>Docker入门笔记</li>
+    <li class="wy-breadcrumbs-aside">
+      
+    </li>
+  </ul>
+  <hr/>
+</div>
+          <div role="main">
+            <div class="section">
+              
+                <h1 id="docker">Docker入门笔记</h1>
+<h1 id="docker_1">一、Docker简介</h1>
+<h3 id="1-docker">1. Docker是什么？</h3>
+<p>​   Docker是基于Go语言实现的开源容器项目，属于C/S架构设计，核心理念是：</p>
+<blockquote>
+<p>Build, Ship and Run Any App, Anywhere</p>
+</blockquote>
+<h3 id="2-docker">2. Docker解决了什么问题？</h3>
+<p>​   通过对应用的封装( Packaging)、分发( Distribution)、部署( Deployment)、运行( Runtime)生命周期进行管
+理，达到应用组件级别的“ 一次封装 ，到处运行” 。 这里的应用组件， 既可以 是一个 Web 应用、一个编译环境，也可以是一套数据库平台服务，甚至是一个操作系统或集群。</p>
+<h3 id="3-docker">3. Docker有什么优点？</h3>
+<ul>
+<li><strong>更快速的交付和部署</strong></li>
+</ul>
+<p>使用Docker可以确保开发、测试、生产等环境的一致性，可实现快速迭代开发部署，环境为产品服务。</p>
+<ul>
+<li><strong>更高效的资源利用</strong></li>
+</ul>
+<p>相比传统的虚拟化方式，Docker是内核级的虚拟化，不需要VM操作系统层，几乎没有性能损耗。<img alt="image-20190718003014901" src="../img/image-20190718003014901.png" /></p>
+<ul>
+<li><strong>更简单的运维和管理</strong></li>
+</ul>
+<p>全程围绕镜像、容器、仓库设计，配置灵活，更有K8S等容器编排工具，实现高效运维管理不是问题。</p>
+<h3 id="4-docker">4. Docker怎么实现的？</h3>
+<p>Docker的实现依赖于三个Linux底层组件功能：<code>Namespaces</code>、<code>C-Groups</code>、<code>Union-Filesystem</code></p>
+<p><img alt="image-20190717232945020" src="../img/image-20190717232945020.png" /></p>
+<ul>
+<li>命名空间<code>Namespaces</code>起到了对文件、进程等资源在操作系统层面隔离的作用。</li>
+<li>控制组<code>Control-Groups</code>则起到了对宿主机物理资源如CPU、内存等隔离的作用，即每个容器可使用的物理计算资源是可控的，否则会出现容器耗尽宿主机资源的情况。</li>
+<li>分层文件系统<code>UnionFS</code>解决了Docker镜像分发的问题，保证APP在开发、测试、生产等环境等一致性。</li>
+</ul>
+<h1 id="docker_2">二、Docker核心概念</h1>
+<p>Docker 大部分的操作都围绕着它的三大核心概念 : 镜像、容器和仓库。因此，准确把握这三大核心概念对于掌握 Docker技术尤为重要。</p>
+<h3 id="1">1. 镜像</h3>
+<p>Docker镜像使用分层文件系统，镜像类似一个真实操作系统的ISO文件，用户可在原始镜像的基础上进行定制化，类似Photoshop里的图层概念。</p>
+<h3 id="2">2. 容器</h3>
+<p>将镜像启动就得到了一个容器实例，容器类似一个轻量级的沙箱，对于宿主机来说就是一个进程，用的还是宿主机的内核，只不过通过上面提到的技术手段将资源隔离了，Docker的设计哲学是一个容器只干一件事，尽可能保持容器的单纯性。</p>
+<h3 id="3">3. 仓库</h3>
+<p>仓库类似于Git代码仓库，用于对镜像的管理，Docker公司维护了一个官方的仓库，任何人可从里面克隆镜像到本地，修改定制后上传到仓库分享到互联网，类似于Github，当然官方也提供了仓库的Docker镜像，任何人都可以克隆该镜像然后在本地创建一个本地私有仓库。</p>
+<p>涉及到的相关命令如下：</p>
+<p><img alt="Docker常用命令" src="../img/image-20190717231216301.png" /></p>
+<h1 id="docker_3">三、Docker安装使用</h1>
+<h3 id="1-docker_1">1. 如何安装Docker？</h3>
+<h3 id="2-docker_1">2. 使用Docker镜像</h3>
+<h3 id="3-docker_1">3. 操作Docker容器</h3>
+<h3 id="4-docker_1">4. 访问Docker仓库</h3>
+<h1 id="_1"></h1>
+<h1 id="docker_4">四、Docker数据管理</h1>
+<h1 id="docker_5">五、Docker网络</h1>
+<h1 id="dockerfile">六、Dockerfile介绍</h1>
+<h1 id="docker_6">七、Docker实战案例</h1>
+<h1 id="docker_7">八、Docker总结于思考</h1>
+<h1 id="_2">九、参考资源</h1>
+              
+            </div>
+          </div>
+          <footer>
+  
+    <div class="rst-footer-buttons" role="navigation" aria-label="footer navigation">
+      
+        <a href="../Linux常用命令/" class="btn btn-neutral float-right" title="Linux常用命令">Next <span class="icon icon-circle-arrow-right"></span></a>
+      
+      
+        <a href=".." class="btn btn-neutral" title="开篇"><span class="icon icon-circle-arrow-left"></span> Previous</a>
+      
+    </div>
+  
+
+  <hr/>
+
+  <div role="contentinfo">
+    <!-- Copyright etc -->
+    
+  </div>
+
+  Built with <a href="http://www.mkdocs.org">MkDocs</a> using a <a href="https://github.com/snide/sphinx_rtd_theme">theme</a> provided by <a href="https://readthedocs.org">Read the Docs</a>.
+</footer>
+      
+        </div>
+      </div>
+
+    </section>
+
+  </div>
+
+  <div class="rst-versions" role="note" style="cursor: pointer">
+    <span class="rst-current-version" data-toggle="rst-current-version">
+      
+      
+        <span><a href=".." style="color: #fcfcfc;">&laquo; Previous</a></span>
+      
+      
+        <span style="margin-left: 15px"><a href="../Linux常用命令/" style="color: #fcfcfc">Next &raquo;</a></span>
+      
+    </span>
+</div>
+    <script>var base_url = '..';</script>
+    <script src="../js/theme.js" defer></script>
+      <script src="../search/main.js" defer></script>
+
+</body>
+</html>
